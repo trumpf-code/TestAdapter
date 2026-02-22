@@ -1,4 +1,4 @@
-# Trumpf Functional Tests — TestAdapter
+# Trumpf Functional Tests - TestAdapter
 
 A custom **VSTest adapter** for discovering and executing step-based functional tests within the Visual Studio Test Platform ecosystem. This adapter replaces the traditional `[TestMethod]` paradigm with a structured, **one-class-per-test-case** approach where test logic is defined as ordered steps using `[TcTestStep]` attributes.
 
@@ -38,12 +38,12 @@ A custom **VSTest adapter** for discovering and executing step-based functional 
 
 The **TestAdapter** integrates into the standard VSTest pipeline (`dotnet test`, Visual Studio Test Explorer, Azure DevOps) and provides:
 
-- **Step-based test execution** — each test class contains ordered methods annotated with `[TcTestStep(id)]`, executed sequentially by ascending ID.
-- **Lifecycle hooks** — optional `Prepare`, `Cleanup`, `CanExecute` phases via framework interfaces.
-- **Built-in dependency injection** — powered by [Stashbox](https://github.com/z4kn4fein/stashbox) IoC container, supporting both adapter-level and test-level service registrations.
-- **Tag and category system** — extensible attribute-based tagging for filtering, categorization, and requirement traceability.
-- **One-time initialization** — assembly-scoped setup/teardown operations that run once across the entire test run.
-- **Section event hooks** — fine-grained lifecycle events for cross-cutting concerns such as logging, diagnostics, or reporting.
+- **Step-based test execution** - each test class contains ordered methods annotated with `[TcTestStep(id)]`, executed sequentially by ascending ID.
+- **Lifecycle hooks** - optional `Prepare`, `Cleanup`, `CanExecute` phases via framework interfaces.
+- **Built-in dependency injection** - powered by [Stashbox](https://github.com/z4kn4fein/stashbox) IoC container, supporting both adapter-level and test-level service registrations.
+- **Tag and category system** - extensible attribute-based tagging for filtering, categorization, and requirement traceability.
+- **One-time initialization** - assembly-scoped setup/teardown operations that run once across the entire test run.
+- **Section event hooks** - fine-grained lifecycle events for cross-cutting concerns such as logging, diagnostics, or reporting.
 
 ---
 
@@ -146,13 +146,13 @@ Pre-execution validation ensures all `[TcTestStep]` IDs are unique and non-negat
 The adapter uses [Stashbox](https://github.com/z4kn4fein/stashbox) as its IoC container with disposable transient tracking enabled.
 
 **Adapter-level wirings** (registered automatically):
-- `TiTestContext` — test context for attachments and metadata
-- `TiOneTimeOperations` — one-time init/deinit tracking
-- `ActionsToPerformAtTheInstantTestFails` — failure hook collection
+- `TiTestContext` - test context for attachments and metadata
+- `TiOneTimeOperations` - one-time init/deinit tracking
+- `ActionsToPerformAtTheInstantTestFails` - failure hook collection
 
 **Test-level wirings** are registered by implementing `TiWiring.RegisterDependencies()` on the test class or its base class. Dependencies are injected via the `[Dependency]` attribute on properties.
 
-When multiple classes in the inheritance chain implement `TiWiring`, registrations are applied in order — derived class registrations can override base class registrations.
+When multiple classes in the inheritance chain implement `TiWiring`, registrations are applied in order - derived class registrations can override base class registrations.
 
 ### Tag & Categorization System
 
@@ -175,8 +175,8 @@ Tests implementing `TiTestrunEnvironment` declare `TiOneTimeInitialization` obje
 
 Two event interfaces enable lifecycle instrumentation without modifying test logic:
 
-- **`TiSectionEvents`** — hooks for every phase: `OnPrepareStarting/Finishing`, `OnTestStepStarting/Finishing`, `OnCleanStarting/Finishing`, `OnCanExecuteStarting/Finishing`, `OnOneTimeInitStarting/Finishing`, `OnOneTimeDeinitStarting/Finishing`, `AfterTestResolved`, `OnTestFinishing`
-- **`TiPreSectionEvents`** — `BeforeTestResolved(TypeInfo)`, fired before DI resolution
+- **`TiSectionEvents`** - hooks for every phase: `OnPrepareStarting/Finishing`, `OnTestStepStarting/Finishing`, `OnCleanStarting/Finishing`, `OnCanExecuteStarting/Finishing`, `OnOneTimeInitStarting/Finishing`, `OnOneTimeDeinitStarting/Finishing`, `AfterTestResolved`, `OnTestFinishing`
+- **`TiPreSectionEvents`** - `BeforeTestResolved(TypeInfo)`, fired before DI resolution
 
 ---
 
@@ -420,5 +420,5 @@ Please follow the existing code conventions and naming patterns (`Tc` prefix for
 
 ## License
 
-Proprietary — All rights reserved.
+Proprietary - All rights reserved.
 This software is the intellectual property of TRUMPF and is intended for internal use only. Unauthorized distribution, modification, or use outside of TRUMPF is strictly prohibited.
