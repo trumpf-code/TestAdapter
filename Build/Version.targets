@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="GitVersion">
+    <PropertyGroup>
+      <GitBaseVersionMajor>0</GitBaseVersionMajor>
+      <GitBaseVersionMinor>1</GitBaseVersionMinor>
+      <GitBaseVersionPatch>0</GitBaseVersionPatch>
+      <GitCommits>0</GitCommits>
+    </PropertyGroup>
+  </Target>
+  <Target Name="SetVersion" DependsOnTargets="GitVersion">
+    <PropertyGroup>
+      <PackageVersion>$(GitBaseTag)</PackageVersion>
+    </PropertyGroup>
+    <PropertyGroup>
+      <AssemblyVersion>$(GitBaseVersionMajor).$(GitBaseVersionMinor).$(GitBaseVersionPatch)</AssemblyVersion>
+      <Version>$(PackageVersion)</Version>
+      <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+  </Target>
+</Project>

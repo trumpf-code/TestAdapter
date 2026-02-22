@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" InitialTargets="SetVersion">
+<PropertyGroup>
+  <TargetFramework>net8.0</TargetFramework>
+</PropertyGroup>
+<Import Project="../../Build/Version.targets" />
+<Import Project="../../Build/Common.targets" />
+
+<PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Trumpf.FunctionalTests.Tests" />
+    <InternalsVisibleTo Include="Trumpf.FunctionalTests.TestAdapter.UnitTests" />
+
+    <ProjectReference Include="..\Trumpf.FunctionalTests.TestFramework\Trumpf.FunctionalTests.TestFramework.csproj" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.TestPlatform.ObjectModel" />
+    <PackageReference Include="Stashbox" />
+  </ItemGroup>
+
+  <Target Name="IncludeAllFilesInTargetDir" AfterTargets="Build">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)\Stashbox.dll">
+        <Pack>true</Pack>
+        <PackagePath>lib\$(TargetFramework)\</PackagePath>
+      </TfmSpecificPackageFile>
+    </ItemGroup>
+  </Target>
+
+  <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="BuildOnlySettings;ResolveReferences">
+    <ItemGroup>
+      <!-- Filter out unnecessary files -->
+      <_ReferenceCopyLocalPaths Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <!-- Add file to package with consideration of sub folder. If empty, the root folder is chosen. -->
+      <BuildOutputInPackage Include="@(_ReferenceCopyLocalPaths)" TargetPath="%(_ReferenceCopyLocalPaths.DestinationSubDirectory)" />
+    </ItemGroup>
+  </Target>
+</Project>

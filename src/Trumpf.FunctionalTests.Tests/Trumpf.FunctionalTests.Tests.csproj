@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup>
+  <TargetFramework>net8.0</TargetFramework>
+</PropertyGroup>
+<Import Project="../../Build/Version.targets" />
+<Import Project="../../Build/Common.targets" />
+<PropertyGroup>
+  <IsPackable>false</IsPackable>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AwesomeAssertions" />
+    <ProjectReference Include="..\Trumpf.FunctionalTests.TestAdapter\Trumpf.FunctionalTests.TestAdapter.csproj" />
+    <ProjectReference Include="..\Trumpf.FunctionalTests.TestFramework\Trumpf.FunctionalTests.TestFramework.csproj" />
+  </ItemGroup>
+</Project>

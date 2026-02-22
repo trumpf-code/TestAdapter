@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" InitialTargets="SetVersion">
+<PropertyGroup>
+  <TargetFramework>net8.0</TargetFramework>
+</PropertyGroup>
+<Import Project="../../Build/Version.targets" />
+<Import Project="../../Build/Common.targets" />
+<PropertyGroup>
+  <IsPackable>false</IsPackable>
+</PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="CustomAttributes\**" />
+    <EmbeddedResource Remove="CustomAttributes\**" />
+    <None Remove="CustomAttributes\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Stashbox" />
+  </ItemGroup>
+</Project>

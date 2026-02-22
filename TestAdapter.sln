@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{EB60CFB3-331D-45DF-84EF-35F331580FA0}"
+	ProjectSection(SolutionItems) = preProject
+		Build\Common.targets = Build\Common.targets
+		Build\Version.targets = Build\Version.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A5B10CC5-5D32-4291-9164-7A07A3D29CD4}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		BuildOnlyPipelines.yml = BuildOnlyPipelines.yml
+		NuGet.Config = NuGet.Config
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trumpf.FunctionalTests.TestFramework", "src\Trumpf.FunctionalTests.TestFramework\Trumpf.FunctionalTests.TestFramework.csproj", "{9F0CB541-3362-4B15-94A0-264569D91D3D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trumpf.FunctionalTests.TestAdapter", "src\Trumpf.FunctionalTests.TestAdapter\Trumpf.FunctionalTests.TestAdapter.csproj", "{9B9CE04B-7845-4766-B06C-1FC8F20E6820}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trumpf.FunctionalTests.Tests", "src\Trumpf.FunctionalTests.Tests\Trumpf.FunctionalTests.Tests.csproj", "{4CFB6D41-18A9-4747-8451-A504383E4A0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trumpf.FunctionalTests.TestAdapter.UnitTests", "src\Trumpf.FunctionalTests.TestAdapter.UnitTests\Trumpf.FunctionalTests.TestAdapter.UnitTests.csproj", "{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F0CB541-3362-4B15-94A0-264569D91D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F0CB541-3362-4B15-94A0-264569D91D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0CB541-3362-4B15-94A0-264569D91D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F0CB541-3362-4B15-94A0-264569D91D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B9CE04B-7845-4766-B06C-1FC8F20E6820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B9CE04B-7845-4766-B06C-1FC8F20E6820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B9CE04B-7845-4766-B06C-1FC8F20E6820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9CE04B-7845-4766-B06C-1FC8F20E6820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CFB6D41-18A9-4747-8451-A504383E4A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFB6D41-18A9-4747-8451-A504383E4A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFB6D41-18A9-4747-8451-A504383E4A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFB6D41-18A9-4747-8451-A504383E4A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-E5F6-4A5B-8C9D-0E1F2A3B4C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {990C267F-E6E4-4DB0-9981-E7737EDC0370}
+	EndGlobalSection
+EndGlobal
