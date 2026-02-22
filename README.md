@@ -420,5 +420,6 @@ Please follow the existing code conventions and naming patterns (`Tc` prefix for
 
 ## License
 
-Proprietary - All rights reserved.
-This software is the intellectual property of TRUMPF and is intended for internal use only. Unauthorized distribution, modification, or use outside of TRUMPF is strictly prohibited.
+Copyright (c) TRUMPF Werkzeugmaschinen GmbH + Co. KG. All rights reserved. 2017 - 2026.
+
+Licensed under the [Apache License Version 2.0](LICENSE) License.
